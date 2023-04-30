@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* estilo do botão do menu */
+  a.nav-link {
+    /* @apply text-white transition-all hover:text-blue-500 hover:font-bold font-normal px-5 py-3 bg-gray-800 rounded-md w-[200px] flex items-center text-center justify-center h-[80px] shadow-md hover:shadow-lg relative decoration-none; */
+    @apply relative;
+  }
+
+  a.nav-link::before {
+    @apply bg-lime-500;
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+  a.nav-link:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+
+  /*  estilo do botão deletar */
+  button.delete-button {
+    @apply relative;
+    @apply hover:text-white transition-all;
+  }
+  button.delete-button::before {
+    @apply hover:bg-red-800 bg-yellow-300;
+
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+  button.delete-button:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+  label {
+    @apply block text-sm font-medium text-gray-900 dark:text-white;
+  }
+  select {
+    @apply mb-4;
+  }
+  input {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
+}
